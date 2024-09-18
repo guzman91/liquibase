@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 168234-1
+      author: ahuzar (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_name
+                  type: VARCHAR
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_lastname
+                  type: VARCHAR
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: jobs_pk
+                  name: user_id
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: now()
+                  name: user_created_date
+                  type: TIMESTAMP WITH TIME ZONE
+            tableName: users
+  - changeSet:
+      id: 168234-4
+      author: ahuzar (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: actions_pk
+                  name: address_id
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: street
+                  type: VARCHAR
+              - column:
+                  constraints:
+                    nullable: true
+                  name: city
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: true
+                  name: state
+                  type: VARCHAR
+              - column:
+                  constraints:
+                    nullable: true
+                  name: zip
+                  type: VARCHAR
+            tableName: addresses
